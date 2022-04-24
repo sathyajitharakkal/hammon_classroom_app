@@ -16,18 +16,18 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route createClassroomDetailsPageRoute() {
-    return MaterialPageRoute(builder: ClassroomDetailsRouteBuilder(_serviceLocator));
+  Route createClassroomDetailsPageRoute(Map<dynamic, dynamic> navigationArguments) {
+    return MaterialPageRoute(builder: ClassroomDetailsRouteBuilder(_serviceLocator, navigationArguments));
   }
 
   @override
-  Route createStudentDetailsPageRoute() {
-    return MaterialPageRoute(builder: StudentDetailsRouteBuilder(_serviceLocator));
+  Route createStudentDetailsPageRoute(Map<dynamic, dynamic> navigationArguments) {
+    return MaterialPageRoute(builder: StudentDetailsRouteBuilder(_serviceLocator, navigationArguments));
   }
 
   @override
-  Route createSubjectDetailsPageRoute() {
-    return MaterialPageRoute(builder: SubjectDetailsRouteBuilder(_serviceLocator));
+  Route createSubjectDetailsPageRoute(Map<dynamic, dynamic> navigationArguments) {
+    return MaterialPageRoute(builder: SubjectDetailsRouteBuilder(_serviceLocator, navigationArguments));
   }
 
   // @override

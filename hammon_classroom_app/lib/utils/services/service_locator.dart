@@ -17,13 +17,13 @@ class ServiceLocator {
       () => NavigationService(),
     );
 
-    _registry.registerLazySingleton(
-      () => Api.debuggable(baseUrl: baseUrl),
-    );
-
     // _registry.registerLazySingleton(
-    //   () => Api.create(baseUrl: baseUrl),
+    //   () => Api.debuggable(baseUrl: baseUrl),
     // );
+
+    _registry.registerLazySingleton(
+      () => Api.create(baseUrl: baseUrl),
+    );
   }
 
   void reset() {

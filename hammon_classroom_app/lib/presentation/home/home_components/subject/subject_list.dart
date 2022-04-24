@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hammon_classroom_app/presentation/home/home_components/subject/subject_cubit.dart';
 import 'package:hammon_classroom_app/students_app.dart';
+import 'package:hammon_classroom_app/utils/app_page_injectable.dart';
 import 'package:hammon_classroom_app/utils/app_theme.dart';
 
 class SubjectListWidget extends StatefulWidget {
@@ -16,8 +17,8 @@ class _SubjectListWidgetState extends State<SubjectListWidget> {
 
   @override
   void initState() {
-    super.initState();
     BlocProvider.of<SubjectCubit>(context).getSubjectList();
+    super.initState();
   }
 
   @override
@@ -35,32 +36,37 @@ class _SubjectListWidgetState extends State<SubjectListWidget> {
                         children: List.generate(
                           state.subjectList.length, 
                           (index) {
-                            return Container(
-                              padding: const EdgeInsets.all(12.0),
-                            decoration: BoxDecoration(
-                              color: subjectColors[state.subjectList[index].name],
-                              borderRadius: BorderRadius.circular(4.0)
-                            ),
-                            child: Stack(
-                              children: [
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Image.asset(
-                                    subjectIcons[state.subjectList[index].name]??"",
-                                    fit: BoxFit.fill,
-                                    color: Colors.white.withOpacity(0.3),
+                            return GestureDetector(
+                              onTap: () {
+                              context.navigationService.openSubjectDetails(context, {"data": state.subjectList[index]});
+                            },
+                              child: Container(
+                                padding: const EdgeInsets.all(12.0),
+                              decoration: BoxDecoration(
+                                color: subjectColors[state.subjectList[index].name],
+                                borderRadius: BorderRadius.circular(4.0)
+                              ),
+                              child: Stack(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Image.asset(
+                                      subjectIcons[state.subjectList[index].name]??"",
+                                      fit: BoxFit.fill,
+                                      color: Colors.white.withOpacity(0.3),
+                                    ),
                                   ),
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                  Text(state.subjectList[index].name, style: AppTheme.of(context).header5,),
-                                  Text(state.subjectList[index].teacher, style: AppTheme.of(context).textLight,),
-                                ]),
-                              ],
-                            ),
-                          );
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                    Text(state.subjectList[index].name, style: AppTheme.of(context).header5,),
+                                    Text(state.subjectList[index].teacher, style: AppTheme.of(context).textLight,),
+                                  ]),
+                                ],
+                              ),
+                                                      ),
+                            );
                           }
                         ),
                       );

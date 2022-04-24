@@ -6,6 +6,7 @@ class AppTheme extends InheritedWidget {
   final TextStyle header3;
   final TextStyle header4;
   final TextStyle header5;
+  final TextStyle titleLarge;
   final TextStyle textAccent;
   final TextStyle textLight;
   final TextStyle textLightLarge;
@@ -45,7 +46,14 @@ class AppTheme extends InheritedWidget {
             fontFamily: 'OpenSans'
         ),
         header5 = const TextStyle(
-            fontSize: 20,
+            fontSize: 22,
+            letterSpacing: 2,
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+            fontFamily: 'OpenSans'
+        ),
+        titleLarge = const TextStyle(
+            fontSize: 18,
             letterSpacing: 2,
             color: Colors.white,
             fontWeight: FontWeight.w700,

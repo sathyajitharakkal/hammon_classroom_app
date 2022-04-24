@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Home Page", style: AppTheme.of(context).header2.copyWith(color: Colors.black)),
+          title: const Text("Home Page"),
           automaticallyImplyLeading: false,
         ),
         body: Column(
@@ -53,24 +53,24 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Text(
                         'Students',
-                        style: AppTheme.of(context).textDarkLarge
+                        style: AppTheme.of(context).titleLarge.copyWith(color: Colors.deepPurple)
                       ),
                       SizedBox(height: 8),
                       const SizedBox(
                         height: 90,
                         child: StudentsListWidegt()
                       ),
-                       SizedBox(height: 12),
+                       SizedBox(height: 20),
                       Text(
                         'Subjects',
-                        style: AppTheme.of(context).textDarkLarge
+                        style: AppTheme.of(context).titleLarge.copyWith(color: Colors.deepOrange)
                       ),
                       SizedBox(height: 8),
                       SubjectListWidget(), 
-                      SizedBox(height: 16),
+                      SizedBox(height: 20),
                       Text(
                         'Classroom',
-                        style: AppTheme.of(context).textDarkLarge
+                        style: AppTheme.of(context).titleLarge.copyWith(color: Colors.teal)
                       ),
                       SizedBox(height: 8),
                       SizedBox(

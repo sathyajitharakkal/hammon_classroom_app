@@ -1,5 +1,8 @@
 import 'dart:convert';
 
+import 'package:api/responses_model/students.dart';
+import 'package:api/responses_model/subjects.dart';
+
 Classrooms classroomsFromJson(String str) => Classrooms.fromJson(json.decode(str));
 
 String classroomsToJson(Classrooms data) => json.encode(data.toJson());
@@ -26,12 +29,16 @@ class Classroom {
         required this.layout,
         required this.name,
         required this.size,
+        this.subject = 0,
+        this.studentList = const []
     });
 
     int id;
     String layout;
     String name;
     int size;
+    int subject;
+    List<Student> studentList;
 
     factory Classroom.fromJson(Map<String, dynamic> json) => Classroom(
         id: json["id"],

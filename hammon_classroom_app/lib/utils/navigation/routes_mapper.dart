@@ -7,11 +7,14 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
       case _homePageRouteName:
         return routesFactory.createHomePageRoute();
       case _studentDetailsPageRouteName: 
-        return routesFactory.createStudentDetailsPageRoute();
+        final args = settings.arguments as Map<dynamic, dynamic>;
+        return routesFactory.createStudentDetailsPageRoute(args);
       case _subjectDetailsPageRouteName: 
-        return routesFactory.createSubjectDetailsPageRoute();
+        final args = settings.arguments as Map<dynamic, dynamic>;
+        return routesFactory.createSubjectDetailsPageRoute(args);
       case _classroomDetailsPageRouteName: 
-        return routesFactory.createClassroomDetailsPageRoute();
+        final args = settings.arguments as Map<dynamic, dynamic>;
+        return routesFactory.createClassroomDetailsPageRoute(args);
 
       // case _detailsRouteName:
       //   final args = settings.arguments as NavigationArguments;

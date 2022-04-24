@@ -3,11 +3,11 @@ import 'package:api/responses_model/students.dart';
 import 'package:api/responses_model/subjects.dart';
 
 class BaseRepo {
-  static final BaseRepo _repo = BaseRepo._();
+  static final BaseRepo repo = BaseRepo._();
 
   BaseRepo._();
   factory BaseRepo() {
-    return _repo;
+    return repo;
   }
 
   Subjects? subjects;

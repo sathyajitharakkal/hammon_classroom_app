@@ -18,7 +18,8 @@ class studentsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Classroom',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
+          foregroundColor: Colors.black54,
           color: Colors.white,
           elevation: 0
         )
