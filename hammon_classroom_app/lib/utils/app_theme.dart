@@ -6,11 +6,10 @@ class AppTheme extends InheritedWidget {
   final TextStyle header3;
   final TextStyle header4;
   final TextStyle header5;
-  final TextStyle text1;
-  final TextStyle text2;
-  final TextStyle text3;
-  final TextStyle text4;
-  final TextStyle text5;
+  final TextStyle textAccent;
+  final TextStyle textLight;
+  final TextStyle textLightLarge;
+  final TextStyle textDark;
 
   static const Color colorRed = Color.fromARGB(255, 255, 7, 7);
   static const Color colorGreen = Color.fromARGB(255, 25, 193, 125);
@@ -45,36 +44,31 @@ class AppTheme extends InheritedWidget {
             fontFamily: 'OpenSans'
         ),
         header5 = const TextStyle(
-            fontSize: 16,
+            fontSize: 20,
             letterSpacing: 2,
             color: Colors.white,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w700,
             fontFamily: 'OpenSans'
         ),
-        text1 = const TextStyle(
-            fontSize: 16.0,
-            color: Color.fromRGBO(121, 121, 121, 1.0),
-            fontWeight: FontWeight.w400,
-            fontFamily: 'OpenSans'),
-        text2 = const TextStyle(
+        textAccent = const TextStyle(
             fontSize: 14.0,
             color: Color.fromRGBO(5, 99, 245, 1),
             fontWeight: FontWeight.w400,
             fontFamily: 'OpenSans'),
-        text3 = const TextStyle(
-            fontSize: 12.0,
+        textLight = const TextStyle(
+            fontSize: 14.0,
+            color: Colors.white,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'OpenSans'),
+        textLightLarge = const TextStyle(
+            fontSize: 16.0,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'OpenSans'),
+        textDark = const TextStyle(
+            fontSize: 14.0,
             color: Colors.black,
             fontWeight: FontWeight.w400,
-            fontFamily: 'OpenSans'),
-        text4 = const TextStyle(
-            fontSize: 13.0,
-            color: Color.fromRGBO(114, 114, 114, 1.0),
-            fontWeight: FontWeight.w400,
-            fontFamily: 'OpenSans'),
-        text5 = const TextStyle(
-            fontSize: 13.0,
-            color: Color.fromRGBO(32, 193, 125, 1.0),
-            fontWeight: FontWeight.w600,
             fontFamily: 'OpenSans'),
         super(key: key, child: child);
 

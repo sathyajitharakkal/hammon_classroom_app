@@ -18,7 +18,10 @@ class studentsApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Classroom',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          elevation: 0
+        )
       ),
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateAppRoute(AppRoutesFactory(serviceLocator)),
@@ -26,3 +29,21 @@ class studentsApp extends StatelessWidget {
 
   }
 }
+
+Map<String, Color> subjectColors = {
+  "History": Colors.brown,
+  "Mathematics": Colors.blue,
+  "Social Science": Colors.deepPurpleAccent,
+  "Chemistry": Colors.red,
+  "Biology": Colors.green,
+  "Physics": Colors.amber
+};
+
+Map<String, Color> classroomColors = {
+  "SlateGray": Colors.brown,
+  "Brown": Colors.blue,
+  "DodgerBlue": Colors.deepPurpleAccent,
+  "Chartreuse": Colors.red,
+  "OldLace": Colors.green,
+  "WhiteSmoke": Colors.amber
+};

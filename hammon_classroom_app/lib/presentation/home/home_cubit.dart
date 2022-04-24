@@ -1,4 +1,6 @@
 import 'package:api/api.dart';
+import 'package:api/responses_model/classroom.dart';
+import 'package:api/responses_model/students.dart';
 import 'package:api/responses_model/subjects.dart';
 import 'package:bloc/bloc.dart';
 import 'package:hammon_classroom_app/utils/services/service_locator.dart';
@@ -17,7 +19,16 @@ class HomeCubit extends Cubit<HomeState> {
     List<Subject> subjetList = [];
     Subjects subjects = await serviceLocator.api.getSubjects();
     subjetList = subjects.subjects;
-    emit(HomeLoaded(subjetList: subjetList));
+
+    List<Student> studentList = [];
+    Students students = await serviceLocator.api.getStudents();
+    studentList = students.students;
+
+    List<Classroom> classroomList = [];
+    Classrooms classrooms = await serviceLocator.api.getClassroom();
+    classroomList = classrooms.classrooms;
+
+    emit(HomeLoaded(subjetList: subjetList, studentList: studentList, classroomList: classroomList));
   }
 
 }
