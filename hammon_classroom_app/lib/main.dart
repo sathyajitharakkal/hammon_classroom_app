@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hammon_classroom_app/presentation/index.dart';
+import 'package:hammon_classroom_app/presentation/index/index.dart';
 
 void main() {
   runApp(const MyApp());
