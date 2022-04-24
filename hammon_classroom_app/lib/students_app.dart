@@ -29,21 +29,3 @@ class studentsApp extends StatelessWidget {
 
   }
 }
-
-Map<String, Color> subjectColors = {
-  "History": Colors.brown,
-  "Mathematics": Colors.blue,
-  "Social Science": Colors.deepPurpleAccent,
-  "Chemistry": Colors.red,
-  "Biology": Colors.green,
-  "Physics": Colors.amber
-};
-
-Map<String, Color> classroomColors = {
-  "SlateGray": Colors.brown,
-  "Brown": Colors.blue,
-  "DodgerBlue": Colors.deepPurpleAccent,
-  "Chartreuse": Colors.red,
-  "OldLace": Colors.green,
-  "WhiteSmoke": Colors.amber
-};

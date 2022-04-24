@@ -10,6 +10,7 @@ class AppTheme extends InheritedWidget {
   final TextStyle textLight;
   final TextStyle textLightLarge;
   final TextStyle textDark;
+  final TextStyle textDarkLarge;
 
   static const Color colorRed = Color.fromARGB(255, 255, 7, 7);
   static const Color colorGreen = Color.fromARGB(255, 25, 193, 125);
@@ -70,6 +71,11 @@ class AppTheme extends InheritedWidget {
             color: Colors.black,
             fontWeight: FontWeight.w400,
             fontFamily: 'OpenSans'),
+        textDarkLarge = const TextStyle(
+            fontSize: 18.0,
+            color: Color.fromARGB(255, 60, 60, 60),
+            fontWeight: FontWeight.w700,
+            fontFamily: 'OpenSans'),
         super(key: key, child: child);
 
   static AppTheme of(BuildContext context) {
@@ -79,3 +85,35 @@ class AppTheme extends InheritedWidget {
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) => false;
 }
+
+Map<String, Color> subjectColors = {
+  "History": Colors.brown,
+  "Mathematics": Colors.blue,
+  "Social Science": Colors.deepPurpleAccent,
+  "Chemistry": Colors.red,
+  "Biology": Colors.green,
+  "Physics": Colors.amber
+};
+
+Map<String, String> subjectIcons = {
+  "History": "assets/history.png",
+  "Mathematics": "assets/maths.png",
+  "Social Science": "assets/law.png",
+  "Chemistry": "assets/laboratory.png",
+  "Biology": "assets/dna.png",
+  "Physics": "assets/atom.png"
+};
+
+Map<String, Color> classroomColors = {
+  "SlateGray": Colors.grey,
+  "Brown": Colors.deepOrange,
+  "DodgerBlue": Colors.teal,
+  "Chartreuse": Colors.black26,
+  "OldLace": Colors.green,
+  "WhiteSmoke": Colors.orangeAccent
+};
+
+Map<String, String> classroomICons = {
+  "classroom": "assets/classroom.png",
+  "conference": "assets/conference.png",
+};

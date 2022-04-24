@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/classroom_list.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/students_list.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/subject_list.dart';
-import 'package:hammon_classroom_app/presentation/home/home_cubit.dart';
+import 'package:hammon_classroom_app/presentation/home/home_components/classroom/classroom_list.dart';
+import 'package:hammon_classroom_app/presentation/home/home_components/students/students_list.dart';
+import 'package:hammon_classroom_app/presentation/home/home_components/subject/subject_list.dart';
 import 'package:hammon_classroom_app/utils/app_theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +15,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<HomeCubit>(context).getSubjectList();
   }
 
   @override
@@ -32,7 +29,7 @@ class _HomePageState extends State<HomePage> {
           children: [
              Container(
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 215, 213, 213),
+                        color: Color.fromARGB(255, 237, 235, 235),
                         borderRadius: BorderRadius.circular(4.0)
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
@@ -56,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Text(
                         'Students',
-                        style: AppTheme.of(context).textDark
+                        style: AppTheme.of(context).textDarkLarge
                       ),
                       SizedBox(height: 8),
                       const SizedBox(
@@ -66,20 +63,20 @@ class _HomePageState extends State<HomePage> {
                        SizedBox(height: 12),
                       Text(
                         'Subjects',
-                        style: AppTheme.of(context).textDark
+                        style: AppTheme.of(context).textDarkLarge
                       ),
                       SizedBox(height: 8),
                       SubjectListWidget(), 
                       SizedBox(height: 16),
                       Text(
                         'Classroom',
-                        style: AppTheme.of(context).textDark
+                        style: AppTheme.of(context).textDarkLarge
                       ),
                       SizedBox(height: 8),
-                      const SizedBox(
-                        height: 120,
+                      SizedBox(
+                        height: 160,
                         child: ClassroomListWidget()
-                      )
+                        ),
                     ],
                   ),
                 ),
