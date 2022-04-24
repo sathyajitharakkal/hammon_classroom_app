@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hammon_classroom_app/presentation/index/index_cubit.dart';
+import 'package:hammon_classroom_app/presentation/home/home_cubit.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
@@ -18,26 +17,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => IndexCubit(),
-      child: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Home Page"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'hammon_classroom_app',
+              ),
+              Expanded(child:
+               SubjectWidget()
+              )
+            ],
           ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'hammon_classroom_app',
-                ),
-                Expanded(child:
-                 SubjectWidget()
-                )
-              ],
-            ),
-          )),
-    );
+        ));
   }
 }
 
@@ -54,14 +50,14 @@ class _SubjectWidgetState extends State<SubjectWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    BlocProvider.of<IndexCubit>(context).getSubjectList();
+    BlocProvider.of<HomeCubit>(context).getSubjectList();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<IndexCubit, IndexState>(
+    return BlocBuilder<HomeCubit, HomeState>(
                   builder: (context, state) {
-                    if (state is IndexLoaded) {
+                    if (state is HomeLoaded) {
                       return ListView.builder(
                         itemCount: state.subjetList.length,
                         itemBuilder: (context, index) {
