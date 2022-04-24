@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hammon_classroom_app/presentation/details_classroom/classroom_details_route_builder.dart';
+import 'package:hammon_classroom_app/presentation/details_student/student_details_route_builder.dart';
+import 'package:hammon_classroom_app/presentation/details_subject/subject_details_route_builder.dart';
 import 'package:hammon_classroom_app/presentation/home/home_route_builder.dart';
 import 'package:hammon_classroom_app/utils/navigation/navigation.dart';
 import 'package:hammon_classroom_app/utils/services/service_locator.dart';
@@ -13,9 +16,24 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route createDetailsPageRoute(NavigationArguments movie) {
-    // TODO: implement createDetailsPageRoute
-    throw UnimplementedError();
+  Route createClassroomDetailsPageRoute() {
+    return MaterialPageRoute(builder: ClassroomDetailsRouteBuilder(_serviceLocator));
   }
+
+  @override
+  Route createStudentDetailsPageRoute() {
+    return MaterialPageRoute(builder: StudentDetailsRouteBuilder(_serviceLocator));
+  }
+
+  @override
+  Route createSubjectDetailsPageRoute() {
+    return MaterialPageRoute(builder: SubjectDetailsRouteBuilder(_serviceLocator));
+  }
+
+  // @override
+  // Route createDetailsPageRoute(NavigationArguments navArgs) {
+  //   // TODO: implement createDetailsPageRoute
+  //   throw UnimplementedError();
+  // }
 
 }

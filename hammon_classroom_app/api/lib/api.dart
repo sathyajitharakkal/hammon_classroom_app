@@ -6,6 +6,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
+import 'package:api/responses_model/students.dart';
 import 'package:api/responses_model/subjects.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
@@ -116,6 +117,18 @@ extension ClientApi on Api {
     return _handleRequest(
         onRequest: () => _client.get(url, headers: headers),
         onResponse: (response) => subjectsFromJson(response.body));
+  }
+
+  Future<Students> getStudents() async {
+    final url = _endpointWithParam(_students, {"api_key": Api.apiKey});
+
+    final Map<String, String> headers = {
+      'Content-Type': 'application/json',
+    };
+
+    return _handleRequest(
+        onRequest: () => _client.get(url, headers: headers),
+        onResponse: (response) => studentsFromJson(response.body));
   }
 
   // Future<void> testServicePost({required Object body}) async {

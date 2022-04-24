@@ -6,10 +6,16 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
     switch (settings.name) {
       case _homePageRouteName:
         return routesFactory.createHomePageRoute();
+      case _studentDetailsPageRouteName: 
+        return routesFactory.createStudentDetailsPageRoute();
+      case _subjectDetailsPageRouteName: 
+        return routesFactory.createSubjectDetailsPageRoute();
+      case _classroomDetailsPageRouteName: 
+        return routesFactory.createClassroomDetailsPageRoute();
 
-      case _detailsRouteName:
-        final args = settings.arguments as NavigationArguments;
-        return routesFactory.createDetailsPageRoute(args);
+      // case _detailsRouteName:
+      //   final args = settings.arguments as NavigationArguments;
+      //   return routesFactory.createDetailsPageRoute(args);
 
       default:
         return routesFactory.createHomePageRoute();
