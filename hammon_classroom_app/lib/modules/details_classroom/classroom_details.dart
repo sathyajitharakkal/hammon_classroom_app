@@ -1,12 +1,9 @@
-import 'dart:ffi';
-
 import 'package:api/responses_model/classroom.dart';
 import 'package:api/responses_model/students.dart';
 import 'package:api/responses_model/subjects.dart';
 import 'package:flutter/material.dart';
 import 'package:hammon_classroom_app/data&models/base_repo.dart';
-import 'package:hammon_classroom_app/presentation/details_classroom/classroom_layouts.dart';
-import 'package:hammon_classroom_app/students_app.dart';
+import 'package:hammon_classroom_app/modules/details_classroom/classroom_layouts.dart';
 import 'package:hammon_classroom_app/utils/app_theme.dart';
 
 class ClassroomDetailsPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/classroom/classroom_cubit.dart';
+import 'package:hammon_classroom_app/modules/home/home_components/classroom/classroom_cubit.dart';
 import 'package:hammon_classroom_app/utils/app_page_injectable.dart';
 import 'package:hammon_classroom_app/utils/app_theme.dart';
 

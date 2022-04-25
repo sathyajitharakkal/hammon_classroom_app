@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hammon_classroom_app/presentation/details_classroom/classroom_details_route_builder.dart';
-import 'package:hammon_classroom_app/presentation/details_student/student_details_route_builder.dart';
-import 'package:hammon_classroom_app/presentation/details_subject/subject_details_route_builder.dart';
+import 'package:hammon_classroom_app/modules/details_classroom/classroom_details_route_builder.dart';
+import 'package:hammon_classroom_app/modules/details_student/student_details_route_builder.dart';
+import 'package:hammon_classroom_app/modules/details_subject/subject_details_route_builder.dart';
 import 'package:hammon_classroom_app/presentation/home/home_route_builder.dart';
 import 'package:hammon_classroom_app/utils/navigation/navigation.dart';
 import 'package:hammon_classroom_app/utils/services/service_locator.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/classroom/classroom_list.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/students/students_list.dart';
-import 'package:hammon_classroom_app/presentation/home/home_components/subject/subject_list.dart';
+import 'package:hammon_classroom_app/modules/home/home_components/classroom/classroom_list.dart';
+import 'package:hammon_classroom_app/modules/home/home_components/students/students_list.dart';
+import 'package:hammon_classroom_app/modules/home/home_components/subject/subject_list.dart';
 import 'package:hammon_classroom_app/utils/app_theme.dart';
 
 class HomePage extends StatefulWidget {
